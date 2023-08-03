@@ -1,0 +1,6 @@
+Esercizio di oggi: DB University - Queries
+nome repo: db-university (stessa di ieri)
+Dopo aver creato un nuovo database nel vostro phpMyAdmin e aver importato lo schema allegato, eseguite le query dei file allegati.
+Cosa  e come consegnare?
+Dopo aver testato le vostre query con phpMyAdmin, riportatele in un file .sql e caricatelo nella vostra repo.
+Sarebbe consigliabile effettuare un push ad ogni query completata.
