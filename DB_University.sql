@@ -37,14 +37,13 @@ FROM `degrees`
 WHERE `level` = `magistrale`
 
 -- 7.	Da quanti dipartimenti è composta l'università? (12)
-SELECT *
-FROM `students `
-``
+SELECT COUNT (*) AS `numero dipartimenti`
+FROM `departments`;
 
 
 -- 8.	Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
 SELECT *
-FROM `students `
+FROM ``
 ``
 
 
@@ -52,7 +51,7 @@ FROM `students `
 EX - Query con GROUP BY
 -- 1.	Contare quanti iscritti ci sono stati ogni anno
 SELECT *
-FROM `students `
+FROM ` `
 ``
 
 -- 2.	Contare gli insegnanti che hanno l'ufficio nello stesso edificio
