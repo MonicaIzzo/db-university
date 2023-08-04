@@ -1,0 +1,8 @@
+Esercizio di oggi: DB University - Queries con JOIN
+
+nome repo: db-university (stessa di venerdì)
+
+Utilizzando la stessa repo e lo stesso database di venerdì, cercate di risolvere il nuovo blocco pdf di queries!
+Le modalità di consegna sono le stesse di venerdì!
+In allegato le tracce e lo schema del Database :faccia_leggermente_sorridente:
+Buon lavoro!
