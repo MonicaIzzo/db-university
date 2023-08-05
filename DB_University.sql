@@ -10,7 +10,7 @@ WHERE YEAR (`date_of_birth`) = 1990;
 -- 2.	Selezionare tutti i corsi che valgono più di 10 crediti (479)
 SELECT *
 FROM `courses`
-WHERE `cfu` > 10
+WHERE `cfu` > 10;
 
 
 -- 3.	Selezionare tutti gli studenti che hanno più di 30 anni
@@ -22,22 +22,22 @@ WHERE `date_of_birth` <= DATE_SUB(CURDATE(), INTERVAL - 30 YEAR);
 -- 4.	Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea (286)
 SELECT *
 FROM `courses`
-WHERE `period` = `I semestre`
+WHERE `period` = 'I semestre'
 AND `year` = 1;
 
 -- 5.	Selezionare tutti gli appelli d'esame che avvengono nel pomeriggio (dopo le 14) del 20/06/2020 (21)
 SELECT *
 FROM `exams`
-WHERE `date` = `2020-06-20`
+WHERE `date` = '2020-06-20'
 AND HOUR(`hour`) >= 14;
 
 -- 6.	Selezionare tutti i corsi di laurea magistrale (38)
 SELECT *
 FROM `degrees`
-WHERE `level` = `magistrale`
+WHERE `level` = 'magistrale';
 
 -- 7.	Da quanti dipartimenti è composta l'università? (12)
-SELECT COUNT (*) AS `numero_dipartimenti`
+SELECT COUNT(*) AS `numero_dipartimenti`
 FROM `departments`;
 
 
@@ -70,32 +70,39 @@ GROUP BY `exam_id`;
 -- 4.	Contare quanti corsi di laurea ci sono per ogni dipartimento
 SELECT COUNT(`name`) AS `Corso`, `department_id` 
 FROM `degrees`
-GROUP BY `department_id`
+GROUP BY `department_id`;
 
 
 
 
 EX - Query con JOIN
--- 1.	Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
-SELECT *
+-- 1.	Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia - OK
+SELECT `students`.`name`, `students`.`surname`
 FROM `students`
-WHERE YEAR (`date_of_birth`) = 1990;
+JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id`
+WHERE `degrees`.`name` = 'Corso di Laurea in Economia';
 
 
 -- 2.	Selezionare tutti i Corsi di Laurea del Dipartimento di Neuroscienze
-SELECT *
-FROM `students`
-WHERE YEAR (`date_of_birth`) = 1990;
+SELECT `degrees`.*
+FROM `degrees`
+JOIN `departments` ON `departments`.`id` = `degrees`.`department_id`
+WHERE `deparments`.`name` = 'Dipartimento di Neuroscienza'
+AND `degrees`.`level` = 'magistrale';
 
 -- 3.	Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
-SELECT *
-FROM `students`
-WHERE YEAR (`date_of_birth`) = 1990;
+SELECT `courses`.*
+FROM `courses`
+JOIN `` ON ``.`` = ``.``
+JOIN `` ON ``.`` = ``.``
+WHERE ``. = `` AND ``.`` = ``;
 
 -- 4.	Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
-SELECT *
+SELECT ``.``, ``.``, ``.``
 FROM `students`
-WHERE YEAR (`date_of_birth`) = 1990;
+JOIN `` ON ``.`` = ``.``
+JOIN `` ON ``.`` = ``.``
+ORDER BY ``.``, ``.``;
 
 -- 5.	Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 SELECT *
